@@ -14,6 +14,7 @@ $( document ).ready(function() {
             $( "#dataContainer" ).load( "template.html", function() {
                 $("#data").empty();
                 $("#data").html(data[index]);
+                $("#data").attr('id', index);
             });
         }
     })
