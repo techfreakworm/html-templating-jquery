@@ -7,8 +7,15 @@ var data = [
 
 $( document ).ready(function() {
     $("#loadButton").click(function() {
-        $( "#dataContainer" ).load( "template.html", function() {
-        });
+        // $( "#dataContainer" ).load( "template.html", function() {
+        // });
+
+        for (let index = 0; index < data.length; index++) {
+            $( "#dataContainer" ).load( "template.html", function() {
+                $("#data").empty();
+                $("#data").html(data[index]);
+            });
+        }
     })
 });
 
