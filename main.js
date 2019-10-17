@@ -11,7 +11,12 @@ $( document ).ready(function() {
         // });
 
         for (let index = 0; index < data.length; index++) {
-            $( "#dataContainer" ).load( "template.html", function() {
+            // Create row
+            let divRow = document.createElement('div');
+            divRow.className = "row";
+            divRow.id = "row" + index;
+            document.getElementById("dataContainer").appendChild(divRow);
+            $( "#row" + index ).load( "template.html", function() {
                 $("#data").empty();
                 $("#data").html(data[index]);
                 $("#data").attr('id', index);
